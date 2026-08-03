@@ -1,0 +1,36 @@
+name: 行程反馈
+description: 朋友提交订票、酒店、时间或行程建议
+title: "[反馈] "
+labels: ["feedback"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        直接写你想补充或修改的内容即可。提交后 Miles 会看到，并可更新行程页。
+  - type: dropdown
+    id: topic
+    attributes:
+      label: 类型
+      options:
+        - 订票 / 预约
+        - 酒店 / 住宿
+        - 交通 / 火车
+        - 行程安排
+        - 其他
+    validations:
+      required: true
+  - type: textarea
+    id: content
+    attributes:
+      label: 具体内容
+      description: 写清楚日期、人数、已订/待订等信息
+      placeholder: |
+        例如：10/6 博尔盖塞已订票……
+        例如：建议佛罗伦萨酒店靠近老桥……
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: 你的名字（可选）
+      placeholder: Claire / 阿文 / David …

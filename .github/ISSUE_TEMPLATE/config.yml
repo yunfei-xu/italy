@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 查看最新行程页
+    url: https://htmlpreview.github.io/?https://raw.githubusercontent.com/yunfei-xu/italy/main/view.html
+    about: 打开网页版行程（自动显示最新内容）
