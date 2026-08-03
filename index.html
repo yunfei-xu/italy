@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>意大利行程 · 2026.9.27–10.8</title>
+  <meta name="description" content="威尼斯 → 多洛米蒂 → 托斯卡纳 → 罗马" />
+  <meta property="og:title" content="意大利行程 · 威尼斯·多洛米蒂·托斯卡纳·罗马" />
+  <meta property="og:description" content="2026.9.27–10.8" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1c2b33;
+      --muted: #5a6b73;
+      --teal: #1a5f68;
+      --accent: #c56a3c;
+      --bg: #f6f1e8;
+      --paper: #fffcf7;
+      --line: #e2d8c8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Noto Sans SC", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(900px 420px at 0% 0%, #d9ebe7 0%, transparent 60%),
+        radial-gradient(700px 380px at 100% 10%, #f0dcc8 0%, transparent 55%),
+        var(--bg);
+      line-height: 1.7;
+      padding: 2rem 1rem 4rem;
+    }
+
+    .doc {
+      width: min(100%, 680px);
+      margin: 0 auto;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: clamp(1.4rem, 4vw, 2.4rem);
+      box-shadow: 0 20px 50px rgba(28, 43, 51, 0.08);
+    }
+
+    header {
+      text-align: center;
+      padding-bottom: 1.4rem;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 1.6rem;
+    }
+
+    .eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 0.55rem;
+    }
+
+    h1 {
+      font-family: Fraunces, serif;
+      font-size: clamp(1.9rem, 6vw, 2.6rem);
+      color: var(--teal);
+      line-height: 1.2;
+      margin-bottom: 0.6rem;
+    }
+
+    .sub {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .route {
+      margin-top: 0.9rem;
+      font-weight: 500;
+      color: var(--teal);
+    }
+
+    .route span { opacity: 0.45; margin: 0 0.25rem; }
+
+    .share {
+      margin-top: 1.1rem;
+    }
+
+    .share button {
+      font: inherit;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      background: var(--teal);
+      color: #fff;
+      border-radius: 999px;
+      padding: 0.65rem 1.2rem;
+    }
+
+    .share button:active { transform: scale(0.98); }
+
+    h2 {
+      font-family: Fraunces, serif;
+      font-size: 1.35rem;
+      color: var(--teal);
+      margin: 1.7rem 0 0.55rem;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 0.7rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      margin: 0.4rem 0 0.8rem;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 0.65rem 0.4rem;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    th {
+      color: var(--muted);
+      font-weight: 500;
+      font-size: 0.8rem;
+      width: 5.2rem;
+      white-space: nowrap;
+    }
+
+    td strong {
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+
+    td p {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    ul {
+      padding-left: 1.15rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    li + li { margin-top: 0.35rem; }
+
+    .box {
+      background: #f3eee4;
+      border-radius: 12px;
+      padding: 0.9rem 1rem;
+      margin: 0.8rem 0;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    footer {
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 1.4rem;
+      transform: translateX(-50%) translateY(120%);
+      background: var(--ink);
+      color: #fff;
+      padding: 0.65rem 1rem;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      opacity: 0;
+      transition: 0.3s ease;
+      pointer-events: none;
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    @media print {
+      body { background: #fff; padding: 0; }
+      .doc { box-shadow: none; border: none; }
+      .share, .toast { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <article class="doc">
+    <header>
+      <p class="eyebrow">Italia 2026</p>
+      <h1>意大利行程</h1>
+      <p class="sub">9月27日晚到威尼斯 · 10月8日飞机离开</p>
+      <p class="route">威尼斯 <span>→</span> 多洛米蒂 <span>→</span> 托斯卡纳 <span>→</span> 罗马</p>
+      <div class="share">
+        <button type="button" id="shareBtn">复制链接发给朋友</button>
+      </div>
+    </header>
+
+    <h2>总览</h2>
+    <table>
+      <tr><th>威尼斯</th><td>3 晚 · 9/27–9/30</td></tr>
+      <tr><th>多洛米蒂</th><td>4 晚 · Brixen · 9/30–10/4 · 公交不租车</td></tr>
+      <tr><th>托斯卡纳</th><td>2 晚 · 佛罗伦萨 · 酒店已订 10/4–10/6</td></tr>
+      <tr><th>罗马</th><td>2 晚 · 10/6–10/8 飞走</td></tr>
+    </table>
+
+    <h2>威尼斯</h2>
+    <p class="meta">3 晚 · 9/27–9/30</p>
+    <table>
+      <tr>
+        <th>9/27</th>
+        <td><strong>抵达</strong><p>晚上到本岛入住，不排景点。</p></td>
+      </tr>
+      <tr>
+        <th>9/28</th>
+        <td><strong>圣马可 + 本岛</strong><p>圣马可广场、总督宫（可选）、里亚托；傍晚 vaporetto。</p></td>
+      </tr>
+      <tr>
+        <th>9/29</th>
+        <td><strong>离岛或深逛</strong><p>穆拉诺/布拉诺半天，或 Dorsoduro、学院桥。</p></td>
+      </tr>
+    </table>
+
+    <h2>多洛米蒂</h2>
+    <p class="meta">驻 Brixen · 4 晚 · 9/30–10/4 · 全程公交</p>
+    <table>
+      <tr>
+        <th>9/30</th>
+        <td><strong>威尼斯 → Brixen + Val di Funes</strong><p>火车约 5h（Verona 转）。下午巴士 330：孤独教堂 + St. Magdalena，盯末班车。</p></td>
+      </tr>
+      <tr>
+        <th>10/1</th>
+        <td><strong>Ortisei：Seceda + Alpe di Siusi</strong><p>经 Chiusa 转 351。早上去刀锋山；缆车日票约 €65。有余力再 Resciesa。</p></td>
+      </tr>
+      <tr>
+        <th>10/2</th>
+        <td><strong>Lago di Braies</strong><p>B400 → Brunico → 火车 → 巴士 439（需预约）。尽量中午前到湖。</p></td>
+      </tr>
+      <tr>
+        <th>10/3</th>
+        <td><strong>缓冲日</strong><p>补景点 / 小镇 / 看天气。准备次日南下。</p></td>
+      </tr>
+    </table>
+
+    <h2>托斯卡纳</h2>
+    <p class="meta">佛罗伦萨 · 酒店 10/4–10/6</p>
+    <table>
+      <tr>
+        <th>10/4</th>
+        <td><strong>Brixen → 佛罗伦萨</strong><p>上午火车南下（约 5–6h）。傍晚老桥、领主广场、夜景。</p></td>
+      </tr>
+      <tr>
+        <th>10/5</th>
+        <td><strong>佛罗伦萨一天</strong><p>百花大教堂（穹顶预约）+ 乌菲兹或学院馆。不硬塞锡耶纳。</p></td>
+      </tr>
+    </table>
+
+    <h2>罗马</h2>
+    <p class="meta">2 晚 · 10/6–10/8 飞走</p>
+    <table>
+      <tr>
+        <th>10/6</th>
+        <td><strong>佛罗伦萨 → 罗马</strong><p>高铁约 1.5h。下午轻松逛：万神殿、纳沃纳、特莱维。</p></td>
+      </tr>
+      <tr>
+        <th>10/7</th>
+        <td><strong>罗马主日</strong><p>二选一：斗兽场+古罗马广场，或梵蒂冈+圣彼得。别两场排满。</p></td>
+      </tr>
+      <tr>
+        <th>10/8</th>
+        <td><strong>飞机离开</strong><p>按航班留足去机场时间。</p></td>
+      </tr>
+    </table>
+
+    <h2>待办</h2>
+    <div class="box">
+      <ul>
+        <li>订 Brixen 酒店（9/30–10/4），问是否含 Brixen Card</li>
+        <li>订火车：威尼斯→Brixen、Brixen→佛罗伦萨、佛罗伦萨→罗马</li>
+        <li>预约 Braies 巴士 439</li>
+        <li>佛罗伦萨：美术馆 + 百花穹顶</li>
+        <li>罗马酒店 10/6–10/8；斗兽场或梵蒂冈门票</li>
+        <li>确认 10/8 机场与起飞时间</li>
+      </ul>
+    </div>
+
+    <footer>暂定行程 · 更新于 2026-08-03</footer>
+  </article>
+
+  <div class="toast" id="toast">链接已复制</div>
+
+  <script>
+    const toast = document.getElementById("toast");
+    document.getElementById("shareBtn").addEventListener("click", async () => {
+      const url = location.href.split("#")[0];
+      try {
+        if (navigator.share) {
+          await navigator.share({ title: document.title, url });
+          return;
+        }
+      } catch (_) {}
+      try {
+        await navigator.clipboard.writeText(url);
+        toast.classList.add("show");
+        setTimeout(() => toast.classList.remove("show"), 2000);
+      } catch (_) {
+        prompt("复制链接：", url);
+      }
+    });
+  </script>
+</body>
+</html>
