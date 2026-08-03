@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <title>意大利行程</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: "Noto Sans SC", sans-serif;
+      color: #5a6b73;
+      background: #f6f1e8;
+    }
+  </style>
+</head>
+<body>
+  <p>加载最新行程…</p>
+  <script>
+    (async () => {
+      const url =
+        "https://raw.githubusercontent.com/yunfei-xu/italy/main/index.html?ts=" +
+        Date.now();
+      const html = await fetch(url, { cache: "no-store" }).then((r) => {
+        if (!r.ok) throw new Error(String(r.status));
+        return r.text();
+      });
+      document.open();
+      document.write(html);
+      document.close();
+    })().catch(() => {
+      document.body.innerHTML =
+        '<p>加载失败，请刷新。或打开 <a href="https://github.com/yunfei-xu/italy/blob/main/index.html">GitHub 源文件</a>。</p>';
+    });
+  </script>
+</body>
+</html>

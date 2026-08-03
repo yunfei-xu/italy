@@ -4,4 +4,8 @@
 
 同行 7 人：Miles 夫妇（杭州）、Claire 夫妇（上海）、阿文（上海）、David 夫妇（广州）。
 
-打开 [`index.html`](./index.html) 查看完整行程页。
+## 固定分享链接（会自动显示最新内容）
+
+https://htmlpreview.github.io/?https://raw.githubusercontent.com/yunfei-xu/italy/main/view.html
+
+本地打开 [`index.html`](./index.html) 也可查看。
