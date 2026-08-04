@@ -10,7 +10,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
   <style>
     :root {
       --ink: #1c2b33;
@@ -177,11 +176,20 @@
 
     #italy-map {
       width: 100%;
-      height: min(420px, 70vw);
       border-radius: 14px;
       border: 1px solid var(--line);
       margin: 0.6rem 0 0.8rem;
-      z-index: 0;
+      background:
+        radial-gradient(500px 280px at 20% 20%, #d9ebe7 0%, transparent 70%),
+        radial-gradient(420px 260px at 90% 80%, #f0dcc8 0%, transparent 65%),
+        #f7f3ea;
+      overflow: hidden;
+    }
+
+    #italy-map svg {
+      display: block;
+      width: 100%;
+      height: auto;
     }
 
     .map-legend {
@@ -217,25 +225,6 @@
       font-weight: 500;
     }
 
-    .leaflet-container {
-      font: inherit;
-      background: #e8eef0;
-    }
-
-    .route-pin {
-      background: var(--teal);
-      color: #fff;
-      border: 2px solid #fff;
-      border-radius: 50%;
-      width: 26px;
-      height: 26px;
-      display: grid;
-      place-items: center;
-      font-size: 12px;
-      font-weight: 700;
-      box-shadow: 0 2px 8px rgba(28, 43, 51, 0.25);
-    }
-
     footer {
       margin-top: 2rem;
       padding-top: 1rem;
@@ -269,7 +258,7 @@
       body { background: #fff; padding: 0; }
       .doc { box-shadow: none; border: none; }
       .share, .toast { display: none !important; }
-      #italy-map { break-inside: avoid; height: 360px; }
+      #italy-map { break-inside: avoid; }
     }
   </style>
 </head>
@@ -372,7 +361,77 @@
 
     <h2>线路地图</h2>
     <p class="meta">威尼斯 → 多洛米蒂 →（还车）威尼斯火车站 → 佛罗伦萨 → 托斯卡纳 → 罗马</p>
-    <div id="italy-map" role="img" aria-label="意大利行程路线地图"></div>
+    <div id="italy-map" role="img" aria-label="意大利行程路线地图">
+      <svg viewBox="0 0 640 420" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a5f68" />
+          </marker>
+          <marker id="arrow-accent" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#c56a3c" />
+          </marker>
+        </defs>
+
+        <!-- simplified Italy boot silhouette -->
+        <path d="M290 40
+                 C330 35 370 55 385 95
+                 C400 140 390 180 375 210
+                 C360 245 355 280 365 320
+                 C375 355 395 385 420 400
+                 C400 390 370 370 350 345
+                 C330 320 310 300 295 270
+                 C280 240 270 210 255 185
+                 C240 160 220 140 210 110
+                 C200 80 230 45 290 40 Z"
+              fill="#e7efe9" stroke="#c9d7cf" stroke-width="2" />
+
+        <!-- Alps / north cue -->
+        <path d="M210 105 C240 70 300 55 350 75 C330 95 280 110 240 120 Z" fill="#d5e4df" opacity="0.9" />
+
+        <!-- main route: Venice -> Dolomites -> Venice -> Florence -> Tuscany -> Rome -->
+        <path d="M360 120 C340 90 300 70 270 78" fill="none" stroke="#1a5f68" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow)" />
+        <path d="M270 78 C300 95 340 115 360 120" fill="none" stroke="#c56a3c" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="9 8" marker-end="url(#arrow-accent)" />
+        <path d="M360 120 C350 160 340 200 335 235" fill="none" stroke="#1a5f68" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow)" />
+        <path d="M335 235 C325 255 315 275 310 295" fill="none" stroke="#1a5f68" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow)" />
+        <path d="M310 295 C320 325 340 355 355 375" fill="none" stroke="#1a5f68" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow)" />
+
+        <!-- stops -->
+        <g font-family="Noto Sans SC, sans-serif">
+          <!-- 2 Dolomites -->
+          <circle cx="270" cy="78" r="14" fill="#1a5f68" />
+          <text x="270" y="83" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">2</text>
+          <text x="195" y="72" text-anchor="end" fill="#1c2b33" font-size="14" font-weight="600">多洛米蒂</text>
+          <text x="195" y="90" text-anchor="end" fill="#5a6b73" font-size="11">Brixen · 4晚</text>
+
+          <!-- 1 Venice -->
+          <circle cx="360" cy="120" r="14" fill="#1a5f68" />
+          <text x="360" y="125" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">1</text>
+          <text x="380" y="116" fill="#1c2b33" font-size="14" font-weight="600">威尼斯</text>
+          <text x="380" y="134" fill="#5a6b73" font-size="11">3晚 · 租还车</text>
+
+          <!-- 3 Florence -->
+          <circle cx="335" cy="235" r="14" fill="#1a5f68" />
+          <text x="335" y="240" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">3</text>
+          <text x="355" y="232" fill="#1c2b33" font-size="14" font-weight="600">佛罗伦萨</text>
+          <text x="355" y="250" fill="#5a6b73" font-size="11">火车换乘</text>
+
+          <!-- 4 Tuscany -->
+          <circle cx="310" cy="295" r="14" fill="#1a5f68" />
+          <text x="310" y="300" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">4</text>
+          <text x="250" y="292" text-anchor="end" fill="#1c2b33" font-size="14" font-weight="600">托斯卡纳</text>
+          <text x="250" y="310" text-anchor="end" fill="#5a6b73" font-size="11">酒店 2晚</text>
+
+          <!-- 5 Rome -->
+          <circle cx="355" cy="375" r="14" fill="#1a5f68" />
+          <text x="355" y="380" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">5</text>
+          <text x="375" y="372" fill="#1c2b33" font-size="14" font-weight="600">罗马</text>
+          <text x="375" y="390" fill="#5a6b73" font-size="11">飞回</text>
+        </g>
+
+        <text x="24" y="36" fill="#1a5f68" font-size="13" font-weight="600" font-family="Fraunces, serif">Italia Route</text>
+        <text x="24" y="56" fill="#5a6b73" font-size="11" font-family="Noto Sans SC, sans-serif">实线南下 · 虚线还车回威尼斯</text>
+      </svg>
+    </div>
     <ol class="map-legend">
       <li><span class="n">1</span><span><strong>威尼斯</strong> · 9/27–9/30 共 3 晚（双年展 + 本岛）</span></li>
       <li><span class="n">2</span><span><strong>多洛米蒂（Brixen）</strong> · 9/30–10/4 共 4 晚 · 火车站租车</span></li>
@@ -383,7 +442,7 @@
     <div class="box">
       <ul>
         <li>10/4：多洛米蒂开车回<strong>威尼斯火车站还车</strong>，再坐火车去佛罗伦萨，再去托斯卡纳酒店</li>
-        <li>地图为示意；托斯卡纳点位按大区中心标注，酒店地址确定后可再改</li>
+        <li>上图为行程示意路线（不依赖地图服务，分享链接也能稳定显示）</li>
       </ul>
     </div>
 
@@ -530,7 +589,6 @@
 
   <div class="toast" id="toast">链接已复制</div>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script>
     const SHARE_URL =
       "https://htmlpreview.github.io/?https://raw.githubusercontent.com/yunfei-xu/italy/main/view.html";
@@ -551,70 +609,6 @@
         prompt("复制链接：", url);
       }
     });
-
-    (function initItalyMap() {
-      const venice = [45.4408, 12.3155];
-      const brixen = [46.7165, 11.655];
-      const florence = [43.7696, 11.2558];
-      const tuscany = [43.35, 11.25]; // 托斯卡纳示意中心（酒店地址确定后可改）
-      const rome = [41.9028, 12.4964];
-
-      const map = L.map("italy-map", {
-        scrollWheelZoom: false,
-        attributionControl: true,
-      });
-
-      L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
-        maxZoom: 18,
-        attribution: "&copy; OpenStreetMap &copy; CARTO",
-      }).addTo(map);
-
-      const pin = (n) =>
-        L.divIcon({
-          className: "",
-          html: `<div class="route-pin">${n}</div>`,
-          iconSize: [26, 26],
-          iconAnchor: [13, 13],
-        });
-
-      const labels = [
-        "① 威尼斯（3 晚 + 火车站租还车）",
-        "② 多洛米蒂 · Brixen",
-        "③ 佛罗伦萨（换乘）",
-        "④ 托斯卡纳（酒店）",
-        "⑤ 罗马",
-      ];
-
-      const displayPoints = [venice, brixen, florence, tuscany, rome];
-
-      displayPoints.forEach((ll, i) => {
-        L.marker(ll, { icon: pin(String(i + 1)) })
-          .addTo(map)
-          .bindPopup(labels[i]);
-      });
-
-      L.polyline([venice, brixen], {
-        color: "#1a5f68",
-        weight: 4,
-        opacity: 0.9,
-      }).addTo(map);
-
-      // 开车回威尼斯还车后再南下
-      L.polyline([brixen, venice], {
-        color: "#c56a3c",
-        weight: 3.5,
-        opacity: 0.85,
-        dashArray: "8 8",
-      }).addTo(map);
-
-      L.polyline([venice, florence, tuscany, rome], {
-        color: "#1a5f68",
-        weight: 4,
-        opacity: 0.9,
-      }).addTo(map);
-
-      map.fitBounds(L.latLngBounds([venice, brixen, florence, tuscany, rome]).pad(0.18));
-    })();
   </script>
 </body>
 </html>
