@@ -181,6 +181,35 @@
       color: var(--muted);
     }
 
+    .box.book {
+      background: #f7ebe3;
+      border: 1px solid #e8cbb8;
+    }
+
+    .box.book > p:first-child {
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 0.55rem;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: var(--accent);
+      border: 1px solid #e0b59a;
+      border-radius: 4px;
+      padding: 0.05rem 0.35rem;
+      margin-right: 0.25rem;
+      vertical-align: 0.05em;
+    }
+
+    .tag.done {
+      color: var(--teal);
+      border-color: #9cb8b8;
+    }
+
     #italy-map {
       width: 100%;
       border-radius: 14px;
@@ -398,11 +427,64 @@
 
     <h2>总览</h2>
     <table>
-      <tr><th>威尼斯</th><td>3 晚 · 9/27–9/30 · Best Western · 7 人同住 · 含双年展</td></tr>
+      <tr><th>威尼斯</th><td>3 晚 · 9/27–9/30 · Best Western Tritone · 7 人同住 · 含双年展</td></tr>
       <tr><th>多洛米蒂</th><td>4 晚 · Brixen · 9/30–10/4 · 威尼斯火车站租车自驾</td></tr>
       <tr><th>佛罗伦萨 / 托斯卡纳</th><td>10/4 威尼斯还车后火车→佛罗伦萨→托斯卡纳；酒店 10/4–10/6</td></tr>
       <tr><th>罗马</th><td>拟住 Domus Regum（除 David 外 5 人）· 日期待确认可订</td></tr>
     </table>
+
+    <h2>要提前订 · 总清单</h2>
+    <p class="meta">机票 / 酒店 / 火车 / 租车 / 景点预约 / 签证 —— 凡需提前的都列在这里</p>
+    <div class="box book">
+      <p>证件与机票</p>
+      <ul>
+        <li><span class="tag">待办</span><strong>申根签证</strong>：7 人尚未办理，优先推进</li>
+        <li><span class="tag done">已订</span>往返机票（Miles / Claire+阿文 / David 三组）</li>
+      </ul>
+    </div>
+    <div class="box book">
+      <p>住宿（按入住顺序）</p>
+      <ul>
+        <li><span class="tag">待确认</span><strong>威尼斯 Best Western Hotel Tritone</strong>：7 人 · 9/27–9/30 · 确认房型/间数并完成支付；晚到告知酒店</li>
+        <li><span class="tag">待办</span>取消 Claire/阿文原订 Airbnb「Acquadiluna Yellow」</li>
+        <li><span class="tag">待办</span><strong>Brixen 酒店</strong>：7 人 · 9/30–10/4 · 必须有停车位</li>
+        <li><span class="tag done">已订</span>托斯卡纳酒店 · 10/4–10/6</li>
+        <li><span class="tag">待办</span><strong>罗马 Domus Regum</strong>（5 人，除 David）：确认可订日期后下单</li>
+        <li><span class="tag">待办</span><strong>David 罗马住宿</strong>：住到 10/7 晚飞</li>
+      </ul>
+    </div>
+    <div class="box book">
+      <p>交通 · 火车 / 租车 / 当地票</p>
+      <ul>
+        <li><span class="tag">待办</span><strong>租车</strong>：威尼斯火车站一带 · 9/30 取 → 10/4 还 · 7 座/大行李 · 自动挡 · 可上高速</li>
+        <li><span class="tag">待办</span><strong>火车</strong>：威尼斯 → 佛罗伦萨（10/4）· 7 人同车次尽量连座</li>
+        <li><span class="tag">待办</span><strong>火车</strong>：托斯卡纳 / 佛罗伦萨 → 罗马（10/6）</li>
+        <li><span class="tag">待办</span>10/4 佛罗伦萨 → 托斯卡纳酒店接驳（火车/巴士/接送，待定后预订）</li>
+        <li><span class="tag">待办</span><strong>威尼斯 vaporetto 多日票</strong>（建议 48h/72h；机场线是否含在内看清票种）</li>
+        <li><span class="tag">建议</span>罗马市内交通（地铁/公交日票或单程，可到了再买；机场列车/大巴可按航班预留）</li>
+      </ul>
+    </div>
+    <div class="box book">
+      <p>景点门票 / 预约</p>
+      <ul>
+        <li><span class="tag">待办</span><strong>威尼斯双年展</strong>门票（Giardini / Arsenale）· 9/28–9/29 使用</li>
+        <li><span class="tag">可选</span>总督宫门票（想进内再订）；圣马可钟楼登塔（想上再预约）</li>
+        <li><span class="tag">建议</span>多洛米蒂缆车：Ortisei → Seceda / Alpe di Siusi（可现场买，旺季宜早到；能网上订更稳）</li>
+        <li><span class="tag">建议</span>布拉耶斯湖：查当年停车/摆渡是否需预约；尽量早到</li>
+        <li><span class="tag">可选</span>三峰 Tre Cime：若 10/3 去，查交通管制 / 停车 / 缆车是否需预约</li>
+        <li><span class="tag">建议</span>托斯卡纳酒庄/庄园参观（若 10/5 要进庄，多数需提前预约）</li>
+        <li><span class="tag done">已订</span>罗马<strong>博尔盖塞美术馆</strong>（Claire/阿文 10–12；Miles/David 12–14）</li>
+        <li><span class="tag">待办</span>罗马二选一预约：<strong>斗兽场 + 古罗马广场</strong>，或<strong>梵蒂冈博物馆 + 西斯廷</strong>（强烈建议提前网上约时段）</li>
+      </ul>
+    </div>
+    <div class="box book">
+      <p>餐饮订位（7 人建议提前）</p>
+      <ul>
+        <li><span class="tag">建议</span>威尼斯晚餐（Cannaregio / 犹太区 / Dorsoduro）· 9/28、9/29</li>
+        <li><span class="tag">建议</span>Brixen 晚餐 · 至少订 1–2 晚</li>
+        <li><span class="tag">建议</span>罗马晚餐 · 10/6 或 10/7</li>
+      </ul>
+    </div>
 
     <h2>线路地图</h2>
     <p class="meta">威尼斯 → 多洛米蒂 →（还车）威尼斯火车站 → 佛罗伦萨 → 托斯卡纳 → 罗马</p>
@@ -530,21 +612,22 @@
     <h3>住宿</h3>
     <div class="box">
       <ul>
-        <li><strong>已定</strong>：<strong>Best Western</strong> · 7 人同住 · 9/27–9/30（3 晚）</li>
+        <li><strong>已定</strong>：<strong>Best Western Hotel Tritone</strong>（威尼斯）· 7 人同住 · 9/27–9/30（3 晚）</li>
+        <li><strong>位置</strong>：靠近 Santa Lucia 火车站 / Lista di Spagna 一带，进本岛与 9/30 火车站取车都方便</li>
         <li><strong>房型</strong>：按 7 人一起订（建议至少 4 间：3 双人 + 1 单人，以酒店确认为准）</li>
         <li><strong>旧订处理</strong>：Claire/阿文原订「Acquadiluna Yellow」需取消/改期，避免重复订房</li>
-        <li><strong>入住提醒</strong>：Miles/Claire/阿文约 19:15 落地，提前告知酒店晚到；住宿税以酒店说明为准（常见前台现付）</li>
+        <li><strong>入住提醒</strong>：Miles/Claire/阿文约 19:15 落地，提前告知 Tritone 晚到；住宿税以酒店说明为准（常见前台现付）</li>
       </ul>
     </div>
 
     <h3>交通</h3>
     <div class="box">
       <ul>
-        <li><strong>机场 → Best Western</strong>：按酒店具体地址选路（本岛多经 Piazzale Roma / 火车站；若在 Mestre 则机场大巴/打车更直接）</li>
-        <li><strong>本岛出行</strong>：走路为主 + vaporetto（水上巴士）。建议买 48h/72h 交通卡（含 vaporetto，不含机场线时要看清票种）</li>
-        <li><strong>双年展</strong>：主场馆 Arsenale / Giardini，坐 vaporetto 更省脚力</li>
-        <li><strong>9/30 离开</strong>：威尼斯火车站（Santa Lucia）或 Mestre 附近取租车；优先 <strong>7 座或行李空间够的车</strong>，并确认可上高速公路</li>
-        <li><strong>注意</strong>：本岛几乎不能开车；取还车在火车站 / Mestre / Piazzale Roma 一侧</li>
+        <li><strong>机场 → Tritone</strong>：马可波罗机场巴士到 Piazzale Roma / 火车站后，步行或短途到酒店（Lista di Spagna 一带）</li>
+        <li><strong>本岛出行</strong>：走路为主 + vaporetto。<span class="tag">待办</span>建议买 48h/72h 交通卡（含 vaporetto，机场线是否包含看清票种）</li>
+        <li><strong>双年展</strong>：主场馆 Arsenale / Giardini，坐 vaporetto 更省脚力 · <span class="tag">待办</span>门票提前买</li>
+        <li><strong>9/30 离开</strong>：<span class="tag">待办</span>威尼斯火车站（Santa Lucia）取租车；优先 <strong>7 座或行李空间够的车</strong>，并确认可上高速公路</li>
+        <li><strong>注意</strong>：本岛几乎不能开车；取还车在火车站 / Piazzale Roma 一侧</li>
       </ul>
     </div>
 
@@ -562,24 +645,24 @@
         <th>9/28</th>
         <td>
           <strong>双年展主日 A</strong>
-          <p>上午进入双年展（建议先 Giardini 国家馆或 Arsenale，二选一深看，别两馆硬塞完）。</p>
-          <p>傍晚回城：里亚托桥一带散步看大运河；晚餐选 Cannaregio / 犹太区附近，人相对少。</p>
+          <p><span class="tag">待办</span>持双年展票进入（建议先 Giardini 国家馆或 Arsenale，二选一深看，别两馆硬塞完）。</p>
+          <p>傍晚回城：里亚托桥一带散步看大运河；晚餐选 Cannaregio / 犹太区附近 · <span class="tag">建议</span>7 人订位。</p>
         </td>
       </tr>
       <tr>
         <th>9/29</th>
         <td>
           <strong>双年展补看 + 经典威尼斯</strong>
-          <p>上午补双年展另一半；或改经典线：圣马可广场（外观为主，登塔可选）→ 叹息桥外拍 → 总督宫（想进再买票）。</p>
-          <p>下午 Dorsoduro：学院桥外景；傍晚 vaporetto 看夜景。回住处收拾，准备次日租车。</p>
+          <p>上午补双年展另一半；或改经典线：圣马可广场（外观为主，<span class="tag">可选</span>登塔预约）→ 叹息桥外拍 → 总督宫（<span class="tag">可选</span>想进再买票）。</p>
+          <p>下午 Dorsoduro：学院桥外景；傍晚 vaporetto 看夜景。回 Tritone 收拾，准备次日租车。</p>
         </td>
       </tr>
       <tr>
         <th>9/30</th>
         <td>
           <strong>退房 · 租车 · 北上多洛米蒂</strong>
-          <p>早餐后退房；火车站取车，尽量 9:30–10:30 前上路。开往 Brixen 约 2.5–3.5h。</p>
-          <p>下午若早到：顺路 Val di Funes（孤独教堂）拍照后入住。</p>
+          <p>早餐后退房；<span class="tag">待办</span>火车站取已订租车，尽量 9:30–10:30 前上路。开往 Brixen 约 2.5–3.5h。</p>
+          <p>下午若早到：顺路 Val di Funes（孤独教堂）拍照后入住（<span class="tag">待办</span>Brixen 酒店需已订）。</p>
         </td>
       </tr>
     </table>
@@ -612,11 +695,11 @@
     <h3>交通</h3>
     <div class="box">
       <ul>
-        <li><strong>租车</strong>：9/30 威尼斯火车站取车 → 10/4 同一带还车；自动挡、行李空间要够（7 人优先大型旅行车/7 座）</li>
+        <li><strong>租车</strong>：<span class="tag">待办</span>9/30 威尼斯火车站取车 → 10/4 同一带还车；自动挡、行李空间要够（7 人优先大型旅行车/7 座）</li>
         <li><strong>路书</strong>：威尼斯北上经 A27/A22 → Brixen；单程约 2.5–3.5h，留意过路费</li>
-        <li><strong>山里开车</strong>：弯多、雨雾减速；Braies 与热门停车场尽量早到</li>
-        <li><strong>缆车</strong>：Ortisei 上 Seceda / Alpe di Siusi；日票价格以当年官网为准（此前约 €65/人量级）</li>
-        <li><strong>10/4</strong>：预留还车 + 赶火车缓冲，建议中午前到威尼斯火车站</li>
+        <li><strong>山里开车</strong>：弯多、雨雾减速；Braies 与热门停车场尽量早到（<span class="tag">建议</span>查停车/摆渡是否需预约）</li>
+        <li><strong>缆车</strong>：Ortisei 上 Seceda / Alpe di Siusi；<span class="tag">建议</span>可提前网上订或当日早到；价格以当年官网为准</li>
+        <li><strong>10/4</strong>：预留还车 + <span class="tag">待办</span>赶已订火车缓冲，建议中午前到威尼斯火车站</li>
       </ul>
     </div>
 
@@ -634,31 +717,30 @@
         <th>10/1</th>
         <td>
           <strong>刀锋山 + 草甸（精华日）</strong>
-          <p>早出发 Ortisei。上午 Seceda（刀锋山）；中午山上或小镇简餐。</p>
-          <p>下午 Alpe di Siusi（草甸）轻松走；不建议再塞 Braies。</p>
+          <p>早出发 Ortisei。<span class="tag">建议</span>Seceda / Alpe di Siusi 缆车票早买或早到；上午 Seceda，下午草甸。不建议再塞 Braies。</p>
         </td>
       </tr>
       <tr>
         <th>10/2</th>
         <td>
           <strong>布拉耶斯湖</strong>
-          <p>尽量 9 点前到 Lago di Braies。环湖约 1–1.5h，可租船。</p>
-          <p>下午回程可停小镇；晚上在 Brixen 吃一顿好些的。</p>
+          <p>尽量 9 点前到 Lago di Braies（<span class="tag">建议</span>查停车预约）。环湖约 1–1.5h，可租船。</p>
+          <p>下午回程可停小镇；晚上在 Brixen 吃一顿好些的 · <span class="tag">建议</span>订位。</p>
         </td>
       </tr>
       <tr>
         <th>10/3</th>
         <td>
           <strong>缓冲日</strong>
-          <p>看天气三选一：① 三峰 Tre Cime ② Brixen 老城轻松逛 ③ 重游喜欢的山谷。</p>
-          <p>傍晚收拾行李、加油、确认次日还车与火车。</p>
+          <p>看天气三选一：① 三峰 Tre Cime（<span class="tag">可选</span>查交通/停车预约）② Brixen 老城轻松逛 ③ 重游喜欢的山谷。</p>
+          <p>傍晚收拾行李、加油、确认次日还车与<span class="tag">待办</span>威尼斯→佛罗伦萨火车。</p>
         </td>
       </tr>
       <tr>
         <th>10/4</th>
         <td>
           <strong>南下还车 + 去托斯卡纳</strong>
-          <p>退房 → 开车回威尼斯火车站还车 → 火车佛罗伦萨 → 托斯卡纳酒店。</p>
+          <p>退房 → 火车站还车 → <span class="tag">待办</span>火车佛罗伦萨 → <span class="tag">待办</span>接驳至托斯卡纳已订酒店。</p>
           <p>当天以交通为主，山里不再排景点。</p>
         </td>
       </tr>
@@ -679,18 +761,19 @@
     <p class="meta">10/4 经佛罗伦萨转往托斯卡纳 · 酒店已订 10/4–10/6</p>
     <div class="box">
       <ul>
-        <li>10/4 动线：多洛米蒂 → 威尼斯还车 → <strong>火车佛罗伦萨</strong> → <strong>托斯卡纳酒店</strong></li>
+        <li>10/4 动线：多洛米蒂 → 威尼斯还车 → <span class="tag">待办</span><strong>火车佛罗伦萨</strong> → <span class="tag">待办</span>接驳 → <span class="tag done">已订</span><strong>托斯卡纳酒店</strong></li>
         <li>主住宿在托斯卡纳；佛罗伦萨为换乘 / 过境节点（是否停留半天待定）</li>
+        <li>若进酒庄 / 庄园：<span class="tag">建议</span>提前预约时段</li>
       </ul>
     </div>
     <table>
       <tr>
         <th>10/4</th>
-        <td><strong>威尼斯 → 佛罗伦萨 → 托斯卡纳</strong><p>还车后火车到佛罗伦萨，再前往托斯卡纳已订酒店，傍晚安顿。</p></td>
+        <td><strong>威尼斯 → 佛罗伦萨 → 托斯卡纳</strong><p>还车后乘已订火车到佛罗伦萨，再按已定接驳前往托斯卡纳酒店，傍晚安顿。</p></td>
       </tr>
       <tr>
         <th>10/5</th>
-        <td><strong>托斯卡纳一天</strong><p>周边小镇 / 酒庄 / 乡村游览（具体点位待定）。</p></td>
+        <td><strong>托斯卡纳一天</strong><p>周边小镇 / 酒庄 / 乡村游览（具体点位待定；酒庄需预约再写进行程）。</p></td>
       </tr>
     </table>
 
@@ -708,15 +791,15 @@
         <th>10/6</th>
         <td>
           <strong>托斯卡纳 → 罗马 + 博尔盖塞</strong>
-          <p>前往罗马（火车或开车，视酒店位置）。博尔盖塞美术馆已订票（分两场）：</p>
+          <p><span class="tag">待办</span>火车/交通前往罗马。博尔盖塞美术馆 <span class="tag done">已订</span>（分两场）：</p>
           <p>Claire 夫妇 + 阿文 · 10:00–12:00</p>
           <p>Miles 夫妇 + David 夫妇（4 张）· 12:00–14:00</p>
-          <p>其余时间轻松逛：万神殿、纳沃纳、特莱维。</p>
+          <p>其余时间轻松逛：万神殿、纳沃纳、特莱维（外观无需票）。</p>
         </td>
       </tr>
       <tr>
         <th>10/7</th>
-        <td><strong>罗马主日 / David 离开</strong><p>二选一：斗兽场+古罗马广场，或梵蒂冈+圣彼得。别两场排满。David 夫妇 TK1864 罗马 T3 <strong>20:05</strong> 起飞经伊斯坦布尔回广州，需下午预留去机场时间。</p></td>
+        <td><strong>罗马主日 / David 离开</strong><p>二选一且<strong>必须预约</strong>：<span class="tag">待办</span>斗兽场+古罗马广场，或 <span class="tag">待办</span>梵蒂冈博物馆+西斯廷/圣彼得。别两场排满。David 夫妇 TK1864 罗马 T3 <strong>20:05</strong> 起飞，下午预留去机场时间。</p></td>
       </tr>
       <tr>
         <th>10/8</th>
@@ -725,33 +808,29 @@
     </table>
 
     <h2>待办</h2>
+    <p class="meta">完整预订清单见上方「要提前订 · 总清单」；此处为推进备注</p>
     <div class="box">
       <p style="margin-bottom:0.55rem;color:var(--ink);font-weight:500">尚未推进</p>
       <ul>
         <li><strong>签证（申根）</strong>：7 人尚未办理，优先推进</li>
-        <li>威尼斯：确认 Best Western 订单（房型/间数）；取消 Claire 原 Airbnb「Acquadiluna Yellow」</li>
-        <li>威尼斯：双年展门票；vaporetto 多日票；9/27 晚到告知 Best Western</li>
-        <li>订 Brixen 酒店（9/30–10/4），确认 7 人入住 + 停车位</li>
-        <li>威尼斯火车站租还车：9/30 取、10/4 还（7 座/大行李空间）</li>
-        <li>订火车：威尼斯 → 佛罗伦萨（10/4）；托斯卡纳 → 罗马（10/6）</li>
-        <li>10/4 佛罗伦萨→托斯卡纳接驳方式待定</li>
-        <li><strong>罗马 Domus Regum</strong>：5 人（除 David）确认可订日期后下单</li>
-        <li>David 夫妇：罗马住宿另订（住到 10/7，当晚飞）</li>
-        <li>托斯卡纳 10/5 具体玩法（小镇 / 酒庄）待定</li>
-        <li>斗兽场或梵蒂冈门票</li>
+        <li>威尼斯 Tritone：确认订单（房型/间数）；取消 Acquadiluna Yellow；晚到告知</li>
+        <li>威尼斯：双年展票 + vaporetto 多日票</li>
+        <li>订 Brixen 酒店（9/30–10/4）+ 停车位</li>
+        <li>租车：9/30 取、10/4 还（威尼斯火车站，7 座）</li>
+        <li>火车：威尼斯→佛罗伦萨（10/4）；托斯卡纳/佛罗伦萨→罗马（10/6）</li>
+        <li>10/4 佛罗伦萨→托斯卡纳接驳方式待定后预订</li>
+        <li>罗马 Domus Regum（5 人）+ David 另订住宿</li>
+        <li>罗马：斗兽场或梵蒂冈（二选一）预约门票</li>
+        <li>托斯卡纳 10/5 点位；若酒庄则预约</li>
       </ul>
     </div>
     <div class="box">
       <p style="margin-bottom:0.55rem;color:var(--ink);font-weight:500">已完成</p>
       <ul>
-        <li>威尼斯住宿方向：7 人同订 Best Western（9/27–9/30）</li>
-        <li>Claire 夫妇 + 阿文：原威尼斯 Airbnb（Acquadiluna Yellow）→ 待取消</li>
+        <li>威尼斯住宿方向：7 人同订 Best Western Hotel Tritone（9/27–9/30）</li>
         <li>托斯卡纳酒店（10/4–10/6）</li>
         <li>罗马博尔盖塞门票（Claire/阿文 10–12；Miles/David 12–14）</li>
-        <li>Miles 夫妇机票：9/27 杭州→威尼斯（经北京）；10/8 罗马→温州</li>
-        <li>Claire 夫妇 + 阿文机票：9/27 上海→威尼斯（经北京）；10/8 罗马→上海（经法兰克福）</li>
-        <li>David 夫妇机票：9/26–27 广州→威尼斯（经伊斯坦布尔）；10/7–8 罗马→广州（经伊斯坦布尔）</li>
-        <li>意向：除 David 外 5 人住罗马 Domus Regum（尚未订成）</li>
+        <li>Miles / Claire+阿文 / David 三组机票均已订</li>
       </ul>
     </div>
 
