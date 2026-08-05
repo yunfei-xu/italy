@@ -199,6 +199,44 @@
       height: auto;
     }
 
+    .place-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin: 0.85rem 0 1.1rem;
+    }
+
+    .place-gallery figure {
+      margin: 0;
+    }
+
+    .place-gallery img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+    }
+
+    .place-gallery figcaption {
+      margin-top: 0.35rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .place-gallery figcaption strong {
+      display: block;
+      color: var(--ink);
+      font-weight: 500;
+      margin-bottom: 0.1rem;
+    }
+
+    @media (max-width: 520px) {
+      .place-gallery { grid-template-columns: 1fr; }
+    }
+
     .map-legend {
       list-style: none;
       padding: 0;
@@ -455,6 +493,39 @@
 
     <h2>威尼斯</h2>
     <p class="meta">3 晚 · 9/27–9/30 · 双年展 + 本岛 · 7 人同行</p>
+
+    <h3>景点速览</h3>
+    <p class="meta">行程里会走到的几处，先看一眼氛围</p>
+    <div class="place-gallery">
+      <figure>
+        <img src="https://raw.githubusercontent.com/yunfei-xu/italy/main/images/venice/sanmarco.jpg" alt="圣马可广场与钟楼" loading="lazy" />
+        <figcaption><strong>圣马可广场</strong>9/29 经典线核心 · 外观为主，登塔可选</figcaption>
+      </figure>
+      <figure>
+        <img src="https://raw.githubusercontent.com/yunfei-xu/italy/main/images/venice/rialto.jpg" alt="里亚托桥" loading="lazy" />
+        <figcaption><strong>里亚托桥 / 大运河</strong>9/28 傍晚散步看运河</figcaption>
+      </figure>
+      <figure>
+        <img src="https://raw.githubusercontent.com/yunfei-xu/italy/main/images/venice/arsenale.jpg" alt="军械库圣马可飞狮" loading="lazy" />
+        <figcaption><strong>军械库 Arsenale</strong>双年展主场馆区 · 9/28–9/29</figcaption>
+      </figure>
+      <figure>
+        <img src="https://raw.githubusercontent.com/yunfei-xu/italy/main/images/venice/vaporetto.jpg" alt="大运河与水上巴士" loading="lazy" />
+        <figcaption><strong>Vaporetto 水上巴士</strong>本岛主要交通 · 傍晚坐船出片</figcaption>
+      </figure>
+      <figure>
+        <img src="https://raw.githubusercontent.com/yunfei-xu/italy/main/images/venice/sighs.jpg" alt="叹息桥" loading="lazy" />
+        <figcaption><strong>叹息桥</strong>9/29 外观外拍 · 与总督宫相邻</figcaption>
+      </figure>
+      <figure>
+        <img src="https://raw.githubusercontent.com/yunfei-xu/italy/main/images/venice/doge.jpg" alt="总督宫与圣马可钟楼" loading="lazy" />
+        <figcaption><strong>总督宫</strong>想进再买票 · 水边一看很出片</figcaption>
+      </figure>
+      <figure>
+        <img src="https://raw.githubusercontent.com/yunfei-xu/italy/main/images/venice/accademia.jpg" alt="学院桥眺望大运河" loading="lazy" />
+        <figcaption><strong>学院桥 / Dorsoduro</strong>9/29 下午 · 眺望 Salute 教堂</figcaption>
+      </figure>
+    </div>
 
     <h3>住宿</h3>
     <div class="box">
